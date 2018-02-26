@@ -1,4 +1,8 @@
+![capture](https://user-images.githubusercontent.com/36031736/36649655-69b84130-1ad1-11e8-8c55-3bdcbb61a471.JPG)
+
 # Computer_Google_game
+
+
 
 ## Project Objective: 
 
