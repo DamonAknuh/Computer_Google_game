@@ -12,7 +12,10 @@ Game URL: http://www.trex-game.skipser.com/
 * Familiarity with OpenCV Library
 * Familiarity with training and setting up Nueral Networks
 
-## Tutorials:
+## Tutorials
+
+OpenCV Template matching:
+https://pythonprogramming.net/template-matching-python-opencv-tutorial/?completed=/canny-edge-detection-gradients-python-opencv-tutorial/
 
 ## Stages:
 - [X] 1 Code Foundational Project
