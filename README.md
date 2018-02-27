@@ -25,3 +25,27 @@ https://pythonprogramming.net/template-matching-python-opencv-tutorial/?complete
 - [ ] 5 Study Nueral networking
 - [ ] 6 Train Nueral network
 - [ ] 7 Test new code
+### Stage 1 Code Foundational Project
+I started out by breaking this project into 6 coded sections.  
+
+The first is the timing section. This section consists of just a while loop timer that counts approximately 5 seconds before continuing to the rest of the program. This section is needed because it will give time for the human to quickly navigate to the right browser to start the game and center the browser on the screen.  
+
+The second is the Image Grabbing. In this section some library will be used to capture images of the screen for later processing. This section will also be used to initailize images. For example turning them to gray scale for later processing. 
+
+The third section is the object detection. This is the section that will detect where the incoming obstacles are, and highlight them with boxes.
+
+The fourth section deals with the decision making. This code will judge when the player needs to take an action to avoid an incomming obstacle. For example if it detects a cactus coming in close it will press the space key to make the character clear the obstacle. 
+
+The fifth and Sixth sections deal with human interface debugging. This will allow me to see how fast the screen grabber is getting images, how well the object detector is detecting the incoming obstacles. This will serve to help me build the code better, and combat problems as they come up. Hopefully in the final version you could remove this portion of the code and still have a working program. 
+
+### Stage 2 Image Grabbing
+
+I first used pyautogui to take screenshots, but I find it to operate really slowly at approximately 1 frame a second. This is way to slow to play any but the slowest online games. I will continue to search, and work on a solution for this problem. For now I can will continue to the object detection and decision making stages.
+
+Possible Solutions:
+- Use a c++ algorithm to capture the screen and just write into a jpeg file, and just have the python just read off it.
+- Switch to windows to make use of ImageGrab from the Pil Library
+- Use a camera for capturing needs
+### Stage 3 Code Object Detection:
+
+To do object detection I originally tried to do OpenCVs template matching. This will slide a template image over the picture searching for matches in the neighboring pixels. This method immediately ran into a couple problems. The first is that there are multiple objects to watch out for, as sometimes cacti come at the player in groups of three. Secondly this doesn't lead to any portability as you have to use exact size demension for the template image to match what is going on the screen. This would likely mean that different computers or even internet browsers would have to set up matching templates to their game enviroment. All in all it wouldn't lead to robust code. 
