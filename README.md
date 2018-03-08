@@ -38,7 +38,7 @@ The fourth section deals with the decision making. This code will judge when the
 
 The fifth and Sixth sections deal with human interface debugging. This will allow me to see how fast the screen grabber is getting images, how well the object detector is detecting the incoming obstacles. This will serve to help me build the code better, and combat problems as they come up. Hopefully in the final version you could remove this portion of the code and still have a working program. 
 
-### Stage 2 Image Grabbing
+### Stage 2 Configure Screen Capture
 
 I first used pyautogui to take screenshots, but I find it to operate really slowly at approximately 1 frame a second. This is way to slow to play any but the slowest online games. I will continue to search, and work on a solution for this problem. For now I can will continue to the object detection and decision making stages.
 
@@ -46,6 +46,17 @@ Possible Solutions:
 - Use a c++ algorithm to capture the screen and just write into a jpeg file, and just have the python just read off it.
 - Switch to windows to make use of ImageGrab from the Pil Library
 - Use a camera for capturing needs
+
+Solution:
+
+In the end after researching and being stuck on this one issue for perhaps a month and a half I fixed it. the solution was simple, as I was on a two moniter system with one HDPI moniter the screen capture took a long time to capture the pixels. When I remove the HDPI moniter the speed increases by 400% to around 5.55 fps. While this frame count still leads something to be desired it is a signifigant improvement from my sometimes 0.83 fps. I will come back to address a few fixs to this issue in later builds, especially as in the later levels of this game high frame count becomes more and more needed. 
+
+![slow loops](https://user-images.githubusercontent.com/36031736/37132612-1c92a38a-22c1-11e8-9b02-d67bc0feed87.png)
+This image shows the slow loops that it was taken. This is time taken of the Capture each image. sS 1 divided by the time taken calculates the frame rate. 
+
+![fastloop](https://user-images.githubusercontent.com/36031736/37132567-dabc0578-22c0-11e8-89dc-3a14119da2e3.png)
+This image showcases the faster frame rate
+
 ### Stage 3 Code Object Detection:
 
 To do object detection I originally tried to do OpenCVs template matching. This will slide a template image over the picture searching for matches in the neighboring pixels. This method immediately ran into a couple problems. The first is that there are multiple objects to watch out for, as sometimes cacti come at the player in groups of three. Secondly this doesn't lead to any portability as you have to use exact size demension for the template image to match what is going on the screen. This would likely mean that different computers or even internet browsers would have to set up matching templates to their game enviroment. All in all it wouldn't lead to robust code. 
