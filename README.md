@@ -60,3 +60,13 @@ This image showcases the faster frame rate
 ### Stage 3 Code Object Detection:
 
 To do object detection I originally tried to do OpenCVs template matching. This will slide a template image over the picture searching for matches in the neighboring pixels. This method immediately ran into a couple problems. The first is that there are multiple objects to watch out for, as sometimes cacti come at the player in groups of three. Secondly this doesn't lead to any portability as you have to use exact size demension for the template image to match what is going on the screen. This would likely mean that different computers or even internet browsers would have to set up matching templates to their game enviroment. All in all it wouldn't lead to robust code. 
+
+In the end I decided to go with the nueral network approach. I think this method is the best way to provide a consistent basis for object detection. I also wanted to learn how to set up my very own nueral network for other projects, and felt this project is a good starting ground.
+
+In the training process you have to first collect your data. I did this by building a program called Data.py which is inspired by SENTDEX tutorial on his own nueral network. Basically the goal of this program is attach data of the input of the keyboard to data of the screen. Then the program can then run and work to find a pattern of input to output.
+
+I think one of the biggest challengs of this project is making it work fast in real time. With other applications of nueral networks you can sort of leave the network to do its own thing for a couple hours and come back to something. In this case it doesn't work quite like that. I need the nueral network to determine the movements fast as it captures the data from the screen. 
+
+With this program all I need to do is play the game for a couple hours to collect data.
+
+
